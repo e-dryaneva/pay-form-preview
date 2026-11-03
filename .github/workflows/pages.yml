@@ -19,7 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unpack compiled payment form
-        run: unzip -q pay-form-preview.zip -d public
+        run: |
+          unzip -q pay-form-preview.zip -d public
+          unzip -qo pay-form-alpha-fix.zip -d public
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
